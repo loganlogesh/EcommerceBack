@@ -19,7 +19,7 @@ app.get('/', (req , res)=>{                 // route part
 //  Page 1 
 //  > list of catagories. -- 1st API
 
-app.get('/productCategory',async(req, res)=>{
+app.get('/ProductCategory',async(req, res)=>{
     let query = {} ;
     if (req.query.productTypeId){                                       // 4th API
         query = {"product_type.productType_id" : Number(req.query.productTypeId)};
@@ -30,7 +30,7 @@ app.get('/productCategory',async(req, res)=>{
     else{
         query = {}
     }
-    let collectionName = "productCategory" ;  
+    let collectionName = "ProductCategory" ;  
     let outPut = await  getData(collectionName , query);
     res.send(outPut)
 })
